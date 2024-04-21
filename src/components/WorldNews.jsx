@@ -1,6 +1,6 @@
 // components/NewsList.js
 import React from 'react';
-const http= "https://static01.nyt.com/"
+
 const WorldNews = ({ news }) => {
   return (
     <div className="container mx-auto py-8">

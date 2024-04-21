@@ -74,12 +74,9 @@ const App = () => {
     }
   };
   const fetchWorldNews = async () => {
-    // const apiKey = '9be3d3c0474644bbaa4e28bbe8bc4bdc';
     const apiKey= '4CAWoeG46fZUZs1aKpfgcQwG29XJge8z'
-    let apiUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=${apiKey}`;
-    // let apiUrl= `https://content.guardianapis.com/search?api-key=${apiKey}`
-    // https://raw.githubusercontent.com/ddsky/world-news-api-clients/main/world-news-api-openapi-3.json
-    // Apply filters
+    let apiUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=${apiKey}`;
+   
     if (filters.category) {
       apiUrl += `&category=${filters.category}`;
     }
@@ -95,7 +92,6 @@ const App = () => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log(data,"hdshgshhahaa")
       if (data.response) {
         setWorldNews(data.response.docs);
         console.log(data)
